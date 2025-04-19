@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+         /* Navigation bar */
+         nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #2196F3, #E91E63);
+            padding: 15px 30px;
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #fff200;
+        }
+
+        .container {
+            width: 70%;
+            margin: 30px auto;
+        }
+
+        .post-form, .search-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-form h2 {
+            margin-bottom: 15px;
+        }
+
+        .post-form input, .post-form textarea, .search-bar input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .post-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #E91E63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2196F3;
+        }
+
+        .post-feed {
+            margin-top: 20px;
+        }
+
+        .post {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .department {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 5px;
+            border: 1px solid #4e15d2;
+            font-weight: bold;
+            background-color: #E91E63;
+            color: white;
+        }
+        .course-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .course {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            color: black;
+        }
+        .course:hover {
+            background-color: #ddd;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 5px 10px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #E91E63;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Ed-Social</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="cgpa.php">Assume CGPA</a></li>
+            <li><a href="material.html"><u>Materials</u></a></li>
+            <li><a href="course_mates.php">Course-Mates</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Course Materials</h2>
+        
+        <div class="department">All Courses</div>
+        <div class="course-list">
+            <div class="course">ACT 201 <div class="buttons"><a href="./materials_pdf/ACT201.pdf" target="_blank" class="button">View</a><a href="" class="button" >Download</a></div></div>
+            <div class="course">ACT 202 <div class="buttons"><a href="./materials_pdf/ACT202.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ACT 320 <div class="buttons"><a href="./materials_pdf/ACT320.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">BEN 205 <div class="buttons"><a href="./materials_pdf/BEN205.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">BIO 103 <div class="buttons"><a href="./materials_pdf/BIO103.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">BUS 112 <div class="buttons"><a href="./materials_pdf/BUS112.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">BUS 172 <div class="buttons"><a href="./materials_pdf/BUS172.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CHE 101 <div class="buttons"><a href="./materials_pdf/CHE101.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CHE 101 Solution <div class="buttons"><a href="./materials_pdf/CHE101 SOLVE.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 115 <div class="buttons"><a href="./materials_pdf/CSE115.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 173 <div class="buttons"><a href="./materials_pdf/CSE173.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 231 <div class="buttons"><a href="./materials_pdf/CSE231.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 311 <div class="buttons"><a href="./materials_pdf/CSE311.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 327 BOOK-1 <div class="buttons"><a href="./materials_pdf/CSE327(1).pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 327 BOOK-2 <div class="buttons"><a href="./materials_pdf/CSE327(2).pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 327 BOOK-3 <div class="buttons"><a href="./materials_pdf/CSE327(3).pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 332 <div class="buttons"><a href="./materials_pdf/CSE332.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 373 <div class="buttons"><a href="./materials_pdf/CSE373.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">CSE 482 <div class="buttons"><a href="./materials_pdf/CSE482.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ECO 101 <div class="buttons"><a href="./materials_pdf/ECO101.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ECO 104 <div class="buttons"><a href="./materials_pdf/ECO104.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">EEE 141 <div class="buttons"><a href="./materials_pdf/EEE141.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">EEE 111 <div class="buttons"><a href="./materials_pdf/ENG111.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">EEE 111 Solution 1 <div class="buttons"><a href="./materials_pdf/EEE111 SOLVE(1).pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">EEE 111 Solution 2 <div class="buttons"><a href="./materials_pdf/EEE111 SOLVE(2).pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ENG 103 <div class="buttons"><a href="./materials_pdf/ENG103.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ENG 111 <div class="buttons"><a href="./materials_pdf/ENG111.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ENG 210 <div class="buttons"><a href="./materials_pdf/ENG210.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">ENV 107 <div class="buttons"><a href="./materials_pdf/ENV107.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">INB 372 <div class="buttons"><a href="./materials_pdf/INB372.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">LAW 200 <div class="buttons"><a href="./materials_pdf/LAW200.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 116 <div class="buttons"><a href="./materials_pdf/MAT116.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 120 <div class="buttons"><a href="./materials_pdf/MAT120+130+250.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 130 <div class="buttons"><a href="./materials_pdf/MAT120+130+250.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 250 <div class="buttons"><a href="./materials_pdf/MAT120+130+250.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 125 <div class="buttons"><a href="./materials_pdf/MAT125.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 125 Solution <div class="buttons"><a href="./materials_pdf/MAT125 SOLVE.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 350 <div class="buttons"><a href="./materials_pdf/MAT350.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MAT 361 <div class="buttons"><a href="./materials_pdf/MAT361.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MGT 212 <div class="buttons"><a href="./materials_pdf/MGT212.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MGT 314 <div class="buttons"><a href="./materials_pdf/MGT314.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MGT 351 <div class="buttons"><a href="./materials_pdf/MGT351.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MIC 201 <div class="buttons"><a href="./materials_pdf/MIC201.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MIS 107 <div class="buttons"><a href="./materials_pdf/MIS107.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MIS 207 <div class="buttons"><a href="./materials_pdf/MIS207.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">MKT 202 <div class="buttons"><a href="./materials_pdf/MKT202.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">PHY 108 <div class="buttons"><a href="./materials_pdf/PHY108.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">PHY 108 Solution <div class="buttons"><a href="./materials_pdf/PHY108 SOLVE.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">PHR 110 <div class="buttons"><a href="./materials_pdf/PHR110.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">POL 101 <div class="buttons"><a href="./materials_pdf/POL101.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">PSY 101 <div class="buttons"><a href="./materials_pdf/PSY101.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+            <div class="course">SOC101 <div class="buttons"><a href="./materials_pdf/SOC101.pdf" target="_blank" class="button">View</a><a href="#" class="button">Download</a></div></div>
+        </div>
+    </div>
+</body>
+</html>

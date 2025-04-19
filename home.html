@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ed-Social Platform - Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #2196F3, #E91E63);
+            padding: 15px 30px;
+            color: white;
+        }
+
+        nav .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #fff200;
+        }
+
+        .container {
+            width: 70%;
+            margin: 30px auto;
+        }
+
+        .post-form, .search-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-form h2 {
+            margin-bottom: 15px;
+        }
+
+        .post-form input, .post-form textarea, .search-bar input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .post-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #E91E63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2196F3;
+        }
+
+        .post-feed {
+            margin-top: 20px;
+        }
+
+        .post {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Ed-Social</div>
+        <ul>
+            <li><a href="home.html"><u>Home</u></a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="cgpa.php">Assume CGPA</a></li>
+            <li><a href="material.html">Materials</a></li>
+            <li><a href="course_mates.php">Course-Mates</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Post Review Form -->
+        <form class="post-form" method="POST" action="insert_review.php" onsubmit="submitReview(event)">
+            <h2>Post a Review</h2>
+            <input type="text" name="faculty" id="faculty" placeholder="Faculty Name" required>
+            <input type="text" name="course" id="course" placeholder="Course Name" required>
+            <input type="number" name="rating" id="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+            <textarea name="review" id="review" placeholder="Write your review..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search-faculty" placeholder="Search by faculty name..." oninput="searchReviews()">
+            <button onclick="searchReviews()">Search</button>
+        </div>
+
+        <!-- Post Feed -->
+        <div class="post-feed" id="post-feed">
+            <!-- Reviews will be loaded here dynamically -->
+        </div>
+    </div>
+
+    <script>
+        function loadReviews(faculty = '') {
+            fetch(`fetch_reviews.php?faculty=${encodeURIComponent(faculty)}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('post-feed').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching reviews:', error));
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+
+            let formData = new FormData();
+            formData.append("faculty", document.getElementById("faculty").value);
+            formData.append("course", document.getElementById("course").value);
+            formData.append("rating", document.getElementById("rating").value);
+            formData.append("review", document.getElementById("review").value);
+
+            fetch('insert_review.php', {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(message => {
+                alert(message); // show success/error
+                loadReviews();  // refresh reviews
+                document.querySelector(".post-form").reset();
+            })
+            .catch(error => console.error("Error submitting review:", error));
+        }
+
+        function searchReviews() {
+            let faculty = document.getElementById("search-faculty").value.trim();
+            loadReviews(faculty);
+        }
+
+        window.onload = () => loadReviews();
+    </script>
+
+</body>
+</html>
